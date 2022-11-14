@@ -1,0 +1,22 @@
+ ALGORITHM Tri_par_insertion
+VAR
+    arr : ARRAY_OF INTEGER[n];
+    i,n,v,p:INTEGER;
+BEGIN
+    write("Entrez la taille du tableau");
+    read(n);
+    FOR i FROM 0 TO n-1 DO
+    write("Entrez le nombre d’élément", i+1);
+    read(arr[i]);
+    END_FOR
+    FOR i FROM 1 TO n-1 DO
+        v:=arr[i];
+        p:=i;
+        WHILE (p>0 and arr[p-1]>v) DO
+            arr[p]:=arr[p-1];
+            p:=p-1;
+        END_WHILE
+        arr[p]:=v;
+    END_FOR
+    write(arr);
+END
